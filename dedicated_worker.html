@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<!-- Disable favicon fetching. -->
+<link rel="icon" href="data:;base64,=">
+<title>create a dedicated worker</title>
+<script>
+const worker = new Worker('worker_fetch.js');
+worker.postMessage('Start');
+const fetch_promise = fetch("file2.json");
+var start = performance.now();
+while (performance.now()-start < 10000) {};
+</script>
