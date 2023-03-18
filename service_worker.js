@@ -5,5 +5,5 @@
 fetch("file1.json");
 self.addEventListener("fetch", (event) => {
   fetch("file2.json");
-  event.respondWith(event.request);    
+  event.respondWith(fetch(event.request));    
   });
